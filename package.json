@@ -8,6 +8,7 @@
   "devDependencies": {
     "@nrwl/cli": "13.8.8",
     "@nrwl/js": "13.8.8",
+    "@nrwl/storybook": "^13.9.0",
     "@nrwl/tao": "13.8.8",
     "@nrwl/workspace": "13.8.8",
     "@types/node": "16.11.7",
