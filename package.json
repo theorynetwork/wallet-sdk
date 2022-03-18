@@ -8,6 +8,7 @@
     "xrpl": "^2.1.1"
   },
   "devDependencies": {
+    "@nrwl/angular": "^13.9.2",
     "@nrwl/cli": "13.8.8",
     "@nrwl/js": "13.8.8",
     "@nrwl/storybook": "^13.9.0",
