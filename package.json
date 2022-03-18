@@ -13,6 +13,7 @@
     "@nrwl/storybook": "^13.9.0",
     "@nrwl/tao": "13.8.8",
     "@nrwl/workspace": "13.8.8",
+    "@nxtend/ionic-angular": "^13.0.0",
     "@types/node": "16.11.7",
     "prettier": "^2.5.1",
     "typescript": "~4.5.2"
