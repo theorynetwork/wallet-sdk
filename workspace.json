@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "ionic-angular": "packages/ionic-angular"
+    "ionic-angular": "packages/ionic-angular",
+    "ionic-angular-e2e": "packages/ionic-angular-e2e"
   }
 }
