@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { TransactionsComponent } from './transactions.component';
 
@@ -6,7 +7,7 @@ export default {
   component: TransactionsComponent,
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [IonicModule.forRoot()],
     })
   ],
 } as Meta<TransactionsComponent>;

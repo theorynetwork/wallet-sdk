@@ -6,6 +6,7 @@ import {
   NgModule,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'tn-transactions',
@@ -21,7 +22,7 @@ export class TransactionsComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, IonicModule],
   declarations: [TransactionsComponent],
   exports: [TransactionsComponent],
 })

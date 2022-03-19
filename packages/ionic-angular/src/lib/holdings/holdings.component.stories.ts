@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { HoldingsComponent } from './holdings.component';
 
@@ -6,7 +7,7 @@ export default {
   component: HoldingsComponent,
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [IonicModule.forRoot()],
     })
   ],
 } as Meta<HoldingsComponent>;
