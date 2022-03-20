@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@theory/wallet/ionic-angular": ["packages/ionic-angular/src/index.ts"]
+      "@theory/wallet/ionic-angular": ["packages/ionic-angular/src/index.ts"],
+      "@theory/xrpl": ["packages/xrpl/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "packages/xrpl",
+  "sourceRoot": "packages/xrpl/src",
+  "prefix": "wallet-sdk",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/packages/xrpl"],
+      "options": {
+        "project": "packages/xrpl/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/xrpl/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/xrpl/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/xrpl"],
+      "options": {
+        "jestConfig": "packages/xrpl/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/xrpl/src/**/*.ts",
+          "packages/xrpl/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

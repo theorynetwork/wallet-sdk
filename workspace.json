@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "ionic-angular": "packages/ionic-angular",
-    "ionic-angular-e2e": "packages/ionic-angular-e2e"
+    "ionic-angular-e2e": "packages/ionic-angular-e2e",
+    "xrpl": "packages/xrpl"
   }
 }
