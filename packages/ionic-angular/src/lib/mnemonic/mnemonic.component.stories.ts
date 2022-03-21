@@ -1,18 +1,18 @@
 import { IonicModule } from '@ionic/angular';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import { TransactionsComponent } from './transactions.component';
+import { MnemonicComponent } from './mnemonic.component';
 
 export default {
-  title: 'TransactionsComponent',
-  component: TransactionsComponent,
+  title: 'MnemonicComponent',
+  component: MnemonicComponent,
   decorators: [
     moduleMetadata({
       imports: [IonicModule.forRoot()],
     })
   ],
-} as Meta<TransactionsComponent>;
+} as Meta<MnemonicComponent>;
 
-const Template: Story<TransactionsComponent> = (args: TransactionsComponent) => ({
+const Template: Story<MnemonicComponent> = (args: MnemonicComponent) => ({
   props: args,
 });
 

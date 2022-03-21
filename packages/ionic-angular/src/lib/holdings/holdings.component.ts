@@ -15,10 +15,8 @@ import { IonicModule } from '@ionic/angular';
   encapsulation: ViewEncapsulation.ShadowDom,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HoldingsComponent implements OnInit {
-  constructor() {}
+export class HoldingsComponent {
 
-  ngOnInit(): void {}
 }
 
 @NgModule({

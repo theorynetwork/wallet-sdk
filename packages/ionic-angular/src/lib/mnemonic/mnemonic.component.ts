@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   ViewEncapsulation,
   ChangeDetectionStrategy,
   NgModule,
@@ -10,20 +9,18 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'tn-transactions',
-  templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.scss'],
+  templateUrl: './mnemonic.component.html',
+  styleUrls: ['./mnemonic.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TransactionsComponent implements OnInit {
-  constructor() {}
+export class MnemonicComponent {
 
-  ngOnInit(): void {}
 }
 
 @NgModule({
   imports: [CommonModule, IonicModule],
-  declarations: [TransactionsComponent],
-  exports: [TransactionsComponent],
+  declarations: [MnemonicComponent],
+  exports: [MnemonicComponent],
 })
-export class TransactionsComponentModule {}
+export class MnemonicComponentModule {}
