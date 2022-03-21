@@ -1,5 +1,9 @@
 import { IonicModule } from '@ionic/angular';
+import { NgxsModule } from '@ngxs/store';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
+
+import { StateXrplAccount, StateXrplSettings } from '@theory/xrpl';
+
 import { HoldingsComponent } from './holdings.component';
 
 export default {
@@ -7,7 +11,13 @@ export default {
   component: HoldingsComponent,
   decorators: [
     moduleMetadata({
-      imports: [IonicModule.forRoot()],
+      imports: [
+        IonicModule.forRoot(),
+        NgxsModule.forRoot([
+          StateXrplSettings,
+          StateXrplAccount
+        ])
+      ],
     })
   ],
 } as Meta<HoldingsComponent>;

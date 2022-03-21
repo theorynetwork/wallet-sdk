@@ -1,12 +1,11 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Injectable } from '@angular/core';
 import { Wallet } from 'xrpl';
-import * as bip39 from 'bip39';
+import { mnemonicGenerate, mnemonicValidate } from '@polkadot/util-crypto';
 
 import { StateXrplWalletModel } from './wallet.state.model';
 import { StateAccountOptions } from './wallet.state.options';
 import { ActionXrplWalletCreate, ActionXrplWalletMnemonicGenerate } from './wallet.actions';
-import { MnemonicType } from '../../enums';
 
 @State<StateXrplWalletModel>(StateAccountOptions)
 @Injectable()
@@ -20,17 +19,14 @@ export class StateXrplWallet {
 
   @Action(ActionXrplWalletMnemonicGenerate)
   mnemonicGenerate(
-    { patchState }: StateContext<StateXrplWalletModel>,
-    { type, language }: ActionXrplWalletMnemonicGenerate
+    { patchState }: StateContext<StateXrplWalletModel>
   ) {
     patchState({ mnemonic: null });
 
-    let mnemonic: string | null = null;
+    const mnemonic: string = mnemonicGenerate();
 
-    if (type === MnemonicType.bip39) {
-      bip39.setDefaultWordlist(language);
-
-      mnemonic = bip39.generateMnemonic();
+    if (!mnemonicValidate(mnemonic)) {
+        throw new Error('Generated mnemonic failed');
     }
 
     patchState({ mnemonic });

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "ngcc --properties es2015 browser module main"
+    "postinstall": "ngcc --properties es2015 browser module main",
+    "storybook-ionic-angular": "nx run ionic-angular:storybook"
   },
   "private": true,
   "dependencies": {
@@ -17,7 +18,7 @@
     "@angular/router": "~13.2.0",
     "@ionic/angular": "^6.0.12",
     "@ngxs/store": "^3.7.3",
-    "bip39": "^3.0.4",
+    "@polkadot/util-crypto": "^8.6.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "xrpl": "^2.1.1",
