@@ -1,7 +1,7 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Injectable } from '@angular/core';
 import { Wallet } from 'xrpl';
-import { mnemonicGenerate, mnemonicValidate } from '@polkadot/util-crypto';
+import { Mnemonic } from 'bitcore-mnemonic';
 
 import { StateXrplWalletModel } from './wallet.state.model';
 import { StateAccountOptions } from './wallet.state.options';
@@ -23,11 +23,7 @@ export class StateXrplWallet {
   ) {
     patchState({ mnemonic: null });
 
-    const mnemonic: string = mnemonicGenerate();
-
-    if (!mnemonicValidate(mnemonic)) {
-        throw new Error('Generated mnemonic failed');
-    }
+    const mnemonic: string = (new Mnemonic(Mnemonic.Words.ENGLISH)).toString()
 
     patchState({ mnemonic });
 

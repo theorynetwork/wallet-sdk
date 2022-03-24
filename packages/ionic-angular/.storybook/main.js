@@ -1,4 +1,5 @@
 const rootMain = require('../../../.storybook/main');
+const webpack = require('webpack');
 
 module.exports = {
   ...rootMain,
@@ -16,6 +17,12 @@ module.exports = {
     if (rootMain.webpackFinal) {
       config = await rootMain.webpackFinal(config, { configType });
     }
+
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        Buffer: ['buffer', 'Buffer'],
+      })
+    );
 
     // add your own webpack tweaks if needed
 

@@ -1,5 +1,6 @@
 import { IonicModule } from '@ionic/angular';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
+
 import { MnemonicComponent } from './mnemonic.component';
 
 export default {

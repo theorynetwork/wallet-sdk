@@ -1,7 +1,15 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "paths": {
+      "buffer": ["./node_modules/buffer/"],
+      "http": ["./node_modules/https-browserify"],
+      "https": ["./node_modules/https-browserify"],
+      "stream": ["./node_modules/https-browserify"],
+      "@theory/xrpl": ["packages/xrpl/src/index.ts"]
+    }
   },
 
   "exclude": ["../**/*.spec.ts"],

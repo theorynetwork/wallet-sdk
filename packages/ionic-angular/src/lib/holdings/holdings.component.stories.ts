@@ -12,11 +12,15 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
+
         IonicModule.forRoot(),
-        NgxsModule.forRoot([
-          StateXrplSettings,
-          StateXrplAccount
-        ])
+        NgxsModule.forRoot(
+          [
+            StateXrplSettings,
+            StateXrplAccount
+          ],
+          { developmentMode: true }
+        )
       ],
     })
   ],
