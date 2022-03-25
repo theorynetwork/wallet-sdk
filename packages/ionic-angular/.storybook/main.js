@@ -12,11 +12,6 @@ module.exports = {
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [...rootMain.addons],
-  devServer: {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-  },
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {
