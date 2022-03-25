@@ -1,10 +1,10 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Injectable } from '@angular/core';
 import { Client, ClientOptions, ConnectionError, ValidationError, XrplError } from 'xrpl';
-import { of } from 'rxjs';
+import { from, of } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 
-import { PublicServers } from '../../enums';
+import { ConnectionStatus, PublicServers } from '../../enums';
 import { StateXrplSettingsModel } from './settings.state.model';
 import { StateXrplSettingsOptions } from './settings.state.options';
 import {
@@ -36,17 +36,29 @@ export class StateXrplSettings {
     { patchState }: StateContext<StateXrplSettingsModel>,
     { server, options }: ActionXrplConnect
   ) {
-    patchState({ server: null, client: null, clientOptions: null, connectError: null });
+    patchState({
+      server: null,
+      client: null,
+      clientOptions: null,
+      connectError: null,
+      connectionStatus: ConnectionStatus.Connecting
+    });
 
     return of(new Client(server as string, options)).pipe(
       tap((client: Client) =>
         patchState({ server, client, clientOptions: options})
       ),
       switchMap((client: Client) =>
-        client.connect()
+        from(client.connect())
+      ),
+      tap(() =>
+        patchState({ connectionStatus: ConnectionStatus.Connected })
       ),
       catchError((error: any) =>
-        of(patchState({ connectError: error}))
+        of(patchState({
+          connectError: error,
+          connectionStatus: ConnectionStatus.Connected
+        }))
       )
     )
   }

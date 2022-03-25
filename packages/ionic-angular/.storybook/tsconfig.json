@@ -3,6 +3,7 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "noImplicitAny": false,
+    "strict": false,
     "paths": {
       "buffer": ["./node_modules/buffer/"],
       "http": ["./node_modules/https-browserify"],

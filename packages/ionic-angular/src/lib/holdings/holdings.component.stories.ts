@@ -2,7 +2,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgxsModule } from '@ngxs/store';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 
-import { StateXrplAccount, StateXrplSettings } from '@theory/xrpl';
+import { PublicServers, StateXrplAccount, StateXrplSettings } from '@theory/xrpl';
 
 import { HoldingsComponent } from './holdings.component';
 
@@ -19,8 +19,7 @@ export default {
             StateXrplSettings,
             StateXrplAccount
           ],
-          { developmentMode: true }
-        )
+          { developmentMode: true })
       ],
     })
   ],
@@ -31,6 +30,7 @@ const Template: Story<HoldingsComponent> = (args: HoldingsComponent) => ({
 });
 
 
-export const Primary = Template.bind({});
+export const Primary: Story<HoldingsComponent> = Template.bind({});
 Primary.args = {
-}
+  server: PublicServers.TestnetRipple
+};
