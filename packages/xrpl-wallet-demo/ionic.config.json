@@ -1,0 +1,7 @@
+{
+  "name": "xrpl-wallet-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

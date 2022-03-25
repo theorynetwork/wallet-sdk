@@ -1,0 +1,28 @@
+{
+  "root": "packages/xrpl-wallet-demo-e2e",
+  "sourceRoot": "packages/xrpl-wallet-demo-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/xrpl-wallet-demo-e2e/cypress.json",
+        "devServerTarget": "xrpl-wallet-demo:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "xrpl-wallet-demo:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/xrpl-wallet-demo-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["xrpl-wallet-demo"]
+}

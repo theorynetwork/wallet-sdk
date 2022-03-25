@@ -1,0 +1,6 @@
+{
+  "name": "xrpl-wallet-demo",
+  "devDependencies": {
+    "@capacitor/cli": "^3.2.5"
+  }
+}

@@ -3,6 +3,8 @@
   "projects": {
     "ionic-angular": "packages/ionic-angular",
     "ionic-angular-e2e": "packages/ionic-angular-e2e",
-    "xrpl": "packages/xrpl"
+    "xrpl": "packages/xrpl",
+    "xrpl-wallet-demo": "packages/xrpl-wallet-demo",
+    "xrpl-wallet-demo-e2e": "packages/xrpl-wallet-demo-e2e"
   }
 }
