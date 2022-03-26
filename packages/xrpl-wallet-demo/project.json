@@ -5,7 +5,7 @@
   "prefix": "wallet-sdk",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/xrpl-wallet-demo",
@@ -28,7 +28,14 @@
             "input": "packages/xrpl-wallet-demo/src/theme/variables.scss"
           }
         ],
-        "scripts": []
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "packages/xrpl-wallet-demo/webpack.config.js"
+        },
+        "allowedCommonJsDependencies": [
+          "bip39",
+          "xrpl"
+        ]
       },
       "configurations": {
         "production": {
@@ -36,7 +43,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",

@@ -20,7 +20,14 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "paths": {
+      "crypto-browserify": ["node_modules/crypto-browserify"],
+      "http": ["node_modules/https-browserify"],
+      "https": ["node_modules/https-browserify"],
+      "stream": ["node_modules/https-browserify"],
+      "xrpl": ["node_modules/xrpl"],
+    }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
