@@ -20,3 +20,13 @@ We are in the beginning stages of development but here is our current roadmap:
    - `npm i @theory/wallet-ui`
 5. Expand the components to include other front end JavaScript frameworks.
 6. Add more crypto networks such as [Algorand](https://www.algorand.com/), [Ethereum](https://ethereum.org), [Stellar](https://www.stellar.org), [Bitcoin](https://bitcoin.org/), etc...
+
+## Prototype
+
+1. Initially the Wallet SDK was being built as a UI component library. Due to a missing bridge between between the [Capacitor Framework](https://capacitorjs.com/) and [Node.js](https://nodejs.org/en/), we received timeouts connecting via web sockets to the `Testnet` on the `XRPL`.
+2. We have pivoted our work to building a bridge plugin first: [https://github.com/theorynetwork/capacitor-nodejs](https://github.com/theorynetwork/capacitor-nodejs)
+3. React Native has a shim [rn-nodify](https://github.com/tradle/rn-nodeify) which we are hoping to piggback to build our public Wallet SDK.
+4. To see where our prototype left off before our pivot, see:
+   - `packages/xrpl` (state management)
+   - `packages/ionic-angular` (ui component library)
+   - `packages/xrpl-wallet-demo` (ionic xrpl demo mobile app).
